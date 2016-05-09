@@ -1,0 +1,25 @@
+//import org.example.SecUser
+//import grails.plugin.springsecurity.SpringSecurityService
+//import org.example.SecRole
+//import org.example.SecUserSecRole
+
+
+
+//class BootStrap {
+
+//SpringSecurityService springSecurityService    
+//def init = { servletContext ->
+//def u =SecUser.findByUsername ('me') ?: new SecUser(username: 'me', password: 'itsasecret').save()
+//def adminUser =SecUser.findByUsername ('admin') ?: new SecUser ( username: 'Anees', password: 'admin', enabled: true).save(failOnError: true)
+//def adminRole = SecRole.findByAuthority('ROLE_ADMIN') ?: new SecRole(authority: 'ROLE_ADMIN').save(failOnError: true)
+
+//SecUserSecRole.findOrSaveBySecUserAndSecRole(u, adminRole)
+    //}
+
+  //  def destroy = {}
+//}
+
+
+
+
+
