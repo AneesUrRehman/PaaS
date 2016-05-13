@@ -7,8 +7,7 @@ class UrlMappings {
             }
         }
 
-        '/hello'(controller: 'docker')
-        "/"(view:"/index")
+        "/"(controller:'docker')
         "500"(view:'/error')
 	}
 }
