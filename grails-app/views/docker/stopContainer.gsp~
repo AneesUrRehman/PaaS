@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>Welcome to Docker</title>
+		<title>Stop Container</title>
 	</head>
 	<body>
 ${stopContainer}

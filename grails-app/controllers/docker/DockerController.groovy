@@ -9,25 +9,37 @@ class DockerController {
    DockerService dockerService
 
     def dockerSearch() {
-        [dockerSearch: dockerService.dockerSearch(params.searchTerm)]
+         // This is the action :
+  dockerService.dockerSearch(busybox) 
+  flash.message= "Done!!"
 
 }
 
 def listContainer() {
-[listContainer: dockerService.listContainer()]
+ // This is the action :
+  dockerService.listContainer() 
+  flash.message= "Done!!"
 }
 def listImages() {
-[listImages: dockerService.listImages()]
+// This is the action :
+  dockerService.listImages() 
+  flash.message= "Done!!"
 }
 
  def startContainer() {
-[startContainer: dockerService.createContainer()]   
+ // This is the action :
+  dockerService.startContainer() 
+  flash.message= "Done!!"  
     } 
 def stopContainer() {
-[stopContainer: dockerService.createContainer()] 
+ // This is the action :
+  dockerService.stopContainer() 
+  flash.message= "Done!!" 
 }
 def waitContainer() {
-[waitContainer: dockerService.createContainer()] 
+ // This is the action :
+  dockerService.waitContainer() 
+  flash.message= "Done!!" 
 }
 def index() {
         render 'Hello'
@@ -37,7 +49,8 @@ def index() {
  [info: dockerService.info()]
     }
 def createContainer() {
-[createContainer: dockerService.createContainer()]
+ // This is the action :
+  dockerService.createContainer() 
+  flash.message= "Done!!"
 }
 }
-

@@ -5,5 +5,8 @@
 	</head>
 	<body>
 ${listContainer}
+<g:form controller="docker" action="listContainer">
+    <input type="submit" value="List Container">
+</g:form>
 	</body>
 </html>
