@@ -1,11 +1,16 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: gloria
+  Date: 12/05/16
+  Time: 09:21 PM
+--%>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
-<html>
-<g:link controller="docker" action="createContainer">Create Container</g:link>
-		<meta name="layout" content="main"/>
-		<title>Welcome to Docker</title>
-	</head>
-	<body>
-		${info}
+<head>
+	<title>PaaS</title>
+</head>
 
-	</body>
-
+<body>
+Put here text, only if you want
+</body>
+</html>

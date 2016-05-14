@@ -1,56 +1,66 @@
 package docker
 
-import com.github.dockerjava.core.DockerClientBuilder
-import com.github.dockerjava.api.command.CreateContainerResponse
-import com.github.dockerjava.api.model.SearchItem
-
 
 class DockerController {
-   DockerService dockerService
+    DockerService dockerService
+
 
     def dockerSearch() {
-         // This is the action :
-  dockerService.dockerSearch(busybox) 
-  flash.message= "Done!!"
+        // This is the action :
+        dockerService.dockerSearch(busybox)
+        flash.message = "Done!!"
 
-}
+    }
 
-def listContainer() {
- // This is the action :
-  dockerService.listContainer() 
-  flash.message= "Done!!"
-}
-def listImages() {
+    def listContainer() {
+        // This is the action :
+        dockerService.listContainer()
+        flash.message = "Done!!"
+    }
+
+    def listImages() {
 // This is the action :
-  dockerService.listImages() 
-  flash.message= "Done!!"
-}
+// What is the properties in listImages ?
+        // for example: the function lis images, return, a docker object
+        // with porpertie name etc... it's necesary for build the table in view
+        def listImages= dockerService.listImages()
+        if(!listImages){
+            flash.error = "List empty"
+        }
 
- def startContainer() {
- // This is the action :
-  dockerService.startContainer() 
-  flash.message= "Done!!"  
-    } 
-def stopContainer() {
- // This is the action :
-  dockerService.stopContainer() 
-  flash.message= "Done!!" 
-}
-def waitContainer() {
- // This is the action :
-  dockerService.waitContainer() 
-  flash.message= "Done!!" 
-}
-def index() {
-        render 'Hello'
+      [listImages:listImages?:[]]  // you need pass a object map to view, with object you need use in view
+    }
+
+    def startContainer() {
+        // This is the action :
+        dockerService.startContainer()
+        flash.message = "Done!!"
+    }
+
+    def stopContainer() {
+        // This is the action :
+        dockerService.stopContainer()
+        flash.message = "Done!!"
+    }
+
+    def waitContainer() {
+        // This is the action :
+        dockerService.waitContainer()
+        flash.message = "Done!!"
+    }
+
+    def index() {
     }
 
     def info() {
- [info: dockerService.info()]
+        [info: dockerService.info()]
     }
-def createContainer() {
- // This is the action :
-  dockerService.createContainer() 
-  flash.message= "Done!!"
-}
+
+    def createContainer() {
+        if(request.method=='POST'){
+            // This is the action :
+            dockerService.createContainer()
+            flash.message = "Done!!"
+        }
+    }
 }
