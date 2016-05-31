@@ -5,8 +5,6 @@
 	</head>
 	<body>
 ${waitContainer}
-<g:form controller="docker" action="waitContainer">
-    <input type="submit" value="Wait Container">
-</g:form>
+
 	</body>
 </html>

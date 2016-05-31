@@ -1,11 +1,12 @@
+
 //<html>
 	//<head>
 		<meta name="layout" content="main"/>
-		<title>Images List</title>
+		<title>Container List</title>
 	</head>
 	//<body>
-<g:form controller="docker" action="listImages">
-    <input type="submit" value="List Images">
+<g:form controller="docker" action="listContainers">
+    <input type="submit" value="List Containers">
 </g:form>
 	</body>
 </html>
@@ -16,7 +17,7 @@
 </head>
 
 <body>
-<g:form controller="docker" action="listImages">
+<g:form controller="docker" action="listContainers">
     <input type="submit" value="Refresh">
 </g:form>
 <div id="main">
@@ -46,24 +47,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <g:each in="${listImages}" var="image">
+                    <g:each in="${listContainers}" var="containers">
                         <tr>
-                            <!--
-                            Example for get property in object
-                            if there are more properties put more td, and
-                            set the correct name property,
-                            example : https://gist.github.com/GloriaPG/1aa33dc5220121036aed2f803d472d77
-                            --->
-                           <td> ${image?.id}</td>
-                            <td> ${image?.repoTags[0]}</td>
-                            <td> ${image?.size}</td>
+                          <td> ${containers?.id}</td>
+                           <td> ${container?.size}</td>
                         </tr>
                     </g:each>
                     </tbody>
                 </table>
-
             </div>
-
         </div>
     </div>
 </div>

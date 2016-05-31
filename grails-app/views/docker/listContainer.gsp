@@ -1,12 +1,11 @@
 <html>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>Container Listr</title>
+		<title>Containers List</title>
 	</head>
 	<body>
-${listContainer}
-<g:form controller="docker" action="listContainer">
-    <input type="submit" value="List Container">
-</g:form>
+${listContainers}
 	</body>
 </html>
+
+

@@ -16,18 +16,17 @@ class DockerService {
     DockerClient dockerClient = DockerClientBuilder.getInstance("unix:///var/run/docker.sock").build()
     def info() {
         return dockerClient.infoCmd().exec().toString()
-    }
+    
+}
 def listImages() {
 
        List<Image> images = dockerClient.listImagesCmd().exec();
 }
-def listContainer() {
+def listContainers() {
 List<Container> containers = dockerClient.listContainersCmd().exec();
+ dockerClient.listContainersCmd().withShowAll(true).exec();
 }
-def dockerSearch(String boxName) {
-List<SearchItem> dockerSearch = 
-dockerClient.searchImagesCmd(boxName).exec()
-}
+
 
 
 def createContainer() {

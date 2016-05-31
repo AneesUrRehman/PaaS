@@ -5,9 +5,7 @@
 	</head>
 	<body>
 ${createContainer}
-<g:form controller="docker" action="createContainer">
-    <input type="submit" value="Create Container">
-</g:form>
+
 	</body>
 </html>
 

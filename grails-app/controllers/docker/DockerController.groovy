@@ -8,49 +8,52 @@ import com.github.dockerjava.api.model.SearchItem
 class DockerController {
    DockerService dockerService
 
-    def dockerSearch() {
-         // This is the action :
-  dockerService.dockerSearch(busybox) 
-  flash.message= "Done!!"
 
-}
+def listContainers() {
+ 
+println dockerService.listContainers()   
+[listContainers: dockerService.listContainers()]
+ 
 
-def listContainer() {
- // This is the action :
-  dockerService.listContainer() 
-  flash.message= "Done!!"
+ 
 }
-def listImages() {
-// This is the action :
-  dockerService.listImages() 
-  flash.message= "Done!!"
-}
+    def listImages() {
+
+        def listImages= dockerService.listImages()
+        if(!listImages){
+            flash.error = "List empty"
+        }
+
+      [listImages:listImages?:[]]  
+    }
+
 
  def startContainer() {
- // This is the action :
-  dockerService.startContainer() 
-  flash.message= "Done!!"  
+ 
+  [startContainer: dockerService.createContainer()]
+   
     } 
 def stopContainer() {
- // This is the action :
-  dockerService.stopContainer() 
-  flash.message= "Done!!" 
+  [stopContainer: dockerService.createContainer()] 
+  
 }
 def waitContainer() {
- // This is the action :
-  dockerService.waitContainer() 
-  flash.message= "Done!!" 
+  [waitContainer: dockerService.createContainer()] 
+   
 }
 def index() {
         render 'Hello'
     }
 
     def info() {
- [info: dockerService.info()]
+[info: dockerService.info()]  
     }
 def createContainer() {
- // This is the action :
-  dockerService.createContainer() 
-  flash.message= "Done!!"
+if(request.method=='POST'){
+            // This is the action :
+            dockerService.createContainer()
+            flash.message = "Done!!"
+  
+}
 }
 }
