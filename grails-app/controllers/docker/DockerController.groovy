@@ -1,10 +1,13 @@
 package docker
 
+ 
 import com.github.dockerjava.core.DockerClientBuilder
 import com.github.dockerjava.api.command.CreateContainerResponse
 import com.github.dockerjava.api.model.SearchItem
+import grails.plugin.springsecurity.annotation.Secured
 
 
+@Secured(['ROLE_ADMIN'])
 class DockerController {
    DockerService dockerService
 
@@ -50,9 +53,11 @@ def index() {
     }
 def createContainer() {
 if(request.method=='POST'){
-            // This is the action :
-            dockerService.createContainer()
-            flash.message = "Done!!"
+         dockerService.createContainer()
+            
+def image = params.image {
+[createContainer: dockerService.createContainer()]
+}
   
 }
 }

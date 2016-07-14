@@ -54,8 +54,9 @@ grails.project.dependency.resolution = {
         test "org.grails:grails-datastore-test-support:1.0-grails-2.4"
 
         compile "com.github.docker-java:docker-java:2.2.3"
-
+	
         build "org.fusesource.jansi:jansi:1.11"
+
     }
 
     plugins {
@@ -66,7 +67,7 @@ grails.project.dependency.resolution = {
         compile ":scaffolding:2.1.2"
         compile ':cache:1.1.7'
         compile ":asset-pipeline:1.9.6"
-	compile ":spring-security-core:2.0-RC5"
+	 compile ":spring-security-core:2.0-RC5"
 	compile ":spring-security-ui:1.0-RC2"
 
 
@@ -75,6 +76,7 @@ grails.project.dependency.resolution = {
         runtime ":hibernate:3.6.10.17"  // or   ":hibernate4:4.3.5.5"
         runtime ":database-migration:1.4.0"
         runtime ":jquery:1.11.1"
+
 
         // Uncomment these to enable additional asset-pipeline capabilities
         //compile ":sass-asset-pipeline:1.9.0"

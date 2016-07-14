@@ -10,8 +10,10 @@ import com.github.dockerjava.api.command.ListContainersCmd;
 import com.github.dockerjava.api.command.ListImagesCmd;
 import com.github.dockerjava.api.model.Container;
 import com.github.dockerjava.api.model.Image;
+import grails.plugin.springsecurity.annotation.Secured
 
 
+@Secured(['ROLE_ADMIN'])
 class DockerService {
     DockerClient dockerClient = DockerClientBuilder.getInstance("unix:///var/run/docker.sock").build()
     def info() {
@@ -30,7 +32,7 @@ List<Container> containers = dockerClient.listContainersCmd().exec();
 
 
 def createContainer() {
-CreateContainerResponse container = dockerClient.createContainerCmd("busybox") //Pass perameter to run apps
+CreateContainerResponse container = dockerClient.createContainerCmd('wordpress') 
    .withCmd("touch", "/test")
    .exec();
 dockerClient.startContainerCmd(container.getId()).exec();
