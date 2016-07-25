@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import com.domain.auth.*
 
 class BootStrap {
@@ -19,6 +20,11 @@ assert User.count() == 1
 assert Role.count() == 2
 assert UserRole.count() == 1
 
+=======
+class BootStrap {
+
+    def init = { servletContext ->
+>>>>>>> bbf4ba3d5fb142467bb21b699cb55c41ead85efb
     }
     def destroy = {
     }

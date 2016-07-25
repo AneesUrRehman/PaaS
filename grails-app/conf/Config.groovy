@@ -115,6 +115,7 @@ log4j.main = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+<<<<<<< HEAD
 
 
 
@@ -143,3 +144,5 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/registationCode/**':	['ROLE_ADMIN']
 ]
 
+=======
+>>>>>>> bbf4ba3d5fb142467bb21b699cb55c41ead85efb

@@ -67,8 +67,11 @@ grails.project.dependency.resolution = {
         compile ":scaffolding:2.1.2"
         compile ':cache:1.1.7'
         compile ":asset-pipeline:1.9.6"
+<<<<<<< HEAD
 	 compile ":spring-security-core:2.0-RC5"
 	compile ":spring-security-ui:1.0-RC2"
+=======
+>>>>>>> bbf4ba3d5fb142467bb21b699cb55c41ead85efb
 
 
 
